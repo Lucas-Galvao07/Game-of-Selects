@@ -1,6 +1,5 @@
-DROP DATABASE IF EXISTS game;
-create database IF NOT EXISTS game;
-use game;
+CREATE DATABASE game;
+USE game;
 
 CREATE TABLE batalha (
     id_batalha INT PRIMARY KEY AUTO_INCREMENT,
@@ -134,6 +133,18 @@ INSERT INTO galaxia (id_galaxia, nome) VALUES
 (1, 'C-137'),
 (2, 'Galáxia da Bruxa');
 
+INSERT INTO planeta (nome, populacao, galaxia_id_galaxia) VALUES
+('Plushisko', 23489, 1),
+('Aethelgard', 150230, 1),
+('Neo-Tokyo Prime', 8900, 1),
+('Kryos-9', 450, 1),
+('Zul-Karith', 123004, 1),
+('Xenon Prime', 34050, 2),
+('Vaporwave-V', 12000, 2),
+('Chrono-Tiga', 0, 2),
+('Oasis-Minor', 8900, 2),
+('Nebula-X', 45000, 2);
+
 INSERT INTO reino (id_reino, nome, populacao) VALUES
 (1, 'Vila Distante', 500);
 
@@ -193,13 +204,13 @@ INSERT INTO batalha (id_batalha, local_batalha, data_batalha) VALUES
 (1, 'Vila Distante','2039-05-01'),
 (2, 'Mar', '2040-03-01'),
 (3, 'Casa de Ademir no Japão','2040-06-29'), 
-(4, 'Fortaleza da Bruxa','2040-06-31');
+(4, 'Fortaleza da Bruxa','2040-06-30');
 
 INSERT INTO embate (id_batalha, fkPersonagem_A, fkPersonagem_B, venceu) VALUES
 (1, 3, 2, 0), 
 (2, 5, 2, 0),
 (3, 1, 2, 1),
-(4, 1, 2, 1); 
+(4, 1, 2, 1);
 
 INSERT INTO objetivo (id_personagem, id_treinamento, licao) VALUES
 (1, 1, 'Desenvolver resiliência e confiança com a sereia'),
@@ -224,6 +235,4 @@ INSERT INTO relacionamento (personagem_id_personagem, personagem_id_personagem1,
 (2, 3, 'Ex-amante'),      
 (2, 8, 'Ex-amante'),      
 (7, 8, 'Amigos'),         
-(1, 4, 'Salvo por');      
-
-SELECT * FROM personagem;
+(1, 4, 'Salvo por');
